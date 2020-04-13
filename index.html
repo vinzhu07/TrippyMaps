@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<!--
+	Visualize by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+
+<head>
+	<title>Trippy Maps</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<script src="js/jquery-3.4.1.min.js"></script>
+
+</head>
+
+<body>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<span class="avatar">TRIPPY MAPS</span>
+			<div class="transbox">
+			<h1>This is Trippy Maps, <br>a trip planner chatbot that uses Google Maps API.
+			</div>
+				</h1>
+		</header>
+		<p id = "Description">
+			Note, the bot may not work as the API key may have been removed due to security reasons.
+		</p>
+		<!-- Main -->
+		<section id="main">
+
+			<div id='bodybox'>
+				<div id='chatborder'>
+					<p id="chatlog8" class="chatlog">&nbsp;</p>
+					<p id="chatlog7" class="chatlog">&nbsp;</p>
+					<p id="chatlog6" class="chatlog">&nbsp;</p>
+					<p id="chatlog5" class="chatlog">&nbsp;</p>
+					<p id="chatlog4" class="chatlog">&nbsp;</p>
+					<p id="chatlog3" class="chatlog">&nbsp;</p>
+					<p id="chatlog2" class="chatlog">&nbsp;</p>
+					<p id="chatlog1" class="chatlog">&nbsp; </p>
+					<input type="text" name="chat" id="chatbox"
+						placeholder="Chatbot: Where would you like to begin the trip (a city)?" onfocus="placeHolder()">
+				</div>
+			</div>
+
+		</section>
+		<p id = "Description">Description
+			<br>
+			This chatbot uses Google Maps API, mainly the Places and Distance Matrix to help users plan a trip. 
+			<br> Once the user is done planning it will print out an intinerary, a list of places, time spent there, and time to travel between.
+			<br>
+			<br>
+			Future
+			<br>
+			I want it to be able to detect and remove filler words. Currently it searchs the full chat phrase.
+			<br>
+			I want it to be able to detect different cuisines off of the phrase. Ex: inputting dumplings could have the bot search for Chinese food.<br>
+			I want it to be able to call Directions multiple times if it fails to return a result. Ex: If an address has a # (building number), the API call will error.<br>
+
+
+		</p>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<p >&copy; Vincent Zhu. All rights reserved. Design: <a href="http://templated.co">TEMPLATED</a>. </p>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery-3.4.1.min.js"></script>
+	<script src="assets/js/jquery.poptrox.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/main.js"></script>
+	
+
+</body>
+
+</html>
