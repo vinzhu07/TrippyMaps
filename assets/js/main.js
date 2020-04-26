@@ -3,7 +3,7 @@
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 
 
-var messages = ["Chatbot: Where would you like to begin the trip (a city)?"], //array that hold the record of each string in chat
+var messages = [], //array that hold the record of each string in chat 
   lastUserMessage = "", //keeps track of the most recent input string from the user
   botMessage = "", //var keeps track of what the chatbot is going to say
   botName = 'Chatbot', //name of the chatbot
@@ -18,6 +18,14 @@ var messages = ["Chatbot: Where would you like to begin the trip (a city)?"], //
   var itin = [""];
 
 const proxyurl = "http://ancient-garden-47770.herokuapp.com/";
+if (JSON.parse(window.localStorage.getItem('messages'))!=null)
+{
+  messages = JSON.parse(window.localStorage.getItem('messages'));
+
+}
+else{
+  messages = ["Chatbot: Where would you like to begin the trip (a city)?"]
+}
   
 //
 //
@@ -143,6 +151,7 @@ function final(){
 		output="";
 		outputChat()
 		
+
       })
 
 	  
@@ -159,7 +168,7 @@ function final(){
 
 //****************************************************************
 //****************************************************************
-//****************************************************************
+//**************************************************************** 
 //****************************************************************
 //****************************************************************
 //****************************************************************
@@ -170,11 +179,18 @@ function final(){
 //this runs each time enter is pressed.
 //It controls the overall input and output
 function newEntry() {
+  
   //if the message from the user isn't empty then run 
   if (document.getElementById("chatbox").value != "") {
     //pulls the value from the chatbox ands sets it to lastUserMessage    
     botMessage = "";
     lastUserMessage = document.getElementById("chatbox").value;
+    if (lastUserMessage.toLowerCase=="reset"){
+      window.localStorage.setItem('messages', null);
+      messages = [];
+      response = 0;
+      return;
+    }
     //sets the chat box to be clear
     document.getElementById("chatbox").value = "";
     //adds the value of the chatbox to the array messages
@@ -230,6 +246,8 @@ function newEntry() {
     // says the message using the text to speech function written below
     //Speech(botMessage);
     //outputs the last few array elements of messages to html
+    window.localStorage.setItem('messages', JSON.stringify(messages));
+
     outputChat();
   }
 }
